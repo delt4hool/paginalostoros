@@ -1,0 +1,236 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #0e466b;
+}
+#inicio {
+    background-color: #0f8bce; /* Quita el fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    text-align: center; /* Centra el texto */
+    color: white; /* Cambia el color del texto si es necesario */
+    padding-top: 5px;
+    margin-top: -1%;
+    width: 94%;
+    margin: 0 auto;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); 
+}
+.titulo-principal {
+    color: #35ddb3; 
+    font-size: 3rem;  
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif; 
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); 
+    padding: 0px;
+}
+.desc-principal {
+    font-size: 25px;
+    text-align: center; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.social {
+    font-size: x-large;
+    background-color: transparent; /* Quita el fondo */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); 
+    background-size:auto;
+    background-position: center;
+    text-align: center;
+    width: 15%;
+    margin: auto; 
+}
+.logo-ig{
+    padding: px;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: #0f8bce;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.friends-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding-top: 20px;
+}
+.friend {
+    width: 29.9%;
+    height: 0%;
+    background: #8eaef3;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.carousel {
+    width: 100%;
+    height: 400px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position:unset;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.carousel img.active {
+    opacity: 1;
+}
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+.carousel .prev {
+    left: 10px;
+}
+.carousel .next {
+    right: 10px;
+}
+@media (max-width: 768px) {
+    body {
+        background-color: #0f8bce;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .friend {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .carousel {
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #0f8bce;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+}
+.menu-btn {
+    position: fixed;
+    top: 32px;
+    left: -5px;
+    background: #0f8bce;
+    color: white;
+    border: black;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 5px;
+}
+.close-btn {
+    display: block;
+    margin: 10px auto;
+    background: #d9534f;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    background: #1c6ea4;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background: #155a8a;
+}
+
+/* Contenido de la página */
+.content {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    
+}
+
+section {
+    display: none;
+    padding: 20px;
+    background: #0f8bce;
+    border-radius: 10px;
+}
+
+section.active {
+    display: block;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+}
