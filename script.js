@@ -53,10 +53,16 @@ document.addEventListener("DOMContentLoaded", function () {
     
     links.forEach(link => {
         link.addEventListener("click", function (e) {
+            const target = this.getAttribute("href");
+            
+            // Si el enlace es a otra página, permitir la navegación normal
+            if (!target.startsWith("#")) {
+                return; // No hace nada, deja que el navegador lo maneje
+            }
+    
             e.preventDefault();
             sections.forEach(section => section.classList.remove("active"));
-            const target = this.getAttribute("href").substring(1);
-            document.getElementById(target).classList.add("active");
+            document.getElementById(target.substring(1)).classList.add("active");
             closeSidebar();
         });
     });
